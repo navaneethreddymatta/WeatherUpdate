@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="data_url">http://api.wunderground.com/api/9ae0e4077f38595e/hourly/q/state_name/city_name.json</string>
+    <string name="hint_city">City (i.e. Charlotte)</string>
+    <string name="hint_state">State (i.e. NC)</string>
+    <string name="submit_button">Submit</string>
+    <string name="fav_title">Favourites</string>
+    <string name="hint_noFavList">There is no city in your Favorites</string>
+    <string name="toast_noCityName">Enter valid City name</string>
+    <string name="toast_noStateName">Enter valid State name</string>
+    <string name="toast_noRecordFound">No records matched with the data entered</string>
+    <string name="cityWeather_title">HOURLY DATA</string>
+    <string name="cityWeather_curLoc">Current Location: </string>
+    <string name="cityWeather_progressDialog">Loading Hourly Data</string>
+</resources>
