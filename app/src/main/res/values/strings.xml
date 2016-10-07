@@ -8,8 +8,12 @@
     <string name="hint_noFavList">There is no city in your Favorites</string>
     <string name="toast_noCityName">Enter valid City name</string>
     <string name="toast_noStateName">Enter valid State name</string>
-    <string name="toast_noRecordFound">No records matched with the data entered</string>
+    <string name="toast_noRecordFound">No cities match your query</string>
     <string name="cityWeather_title">HOURLY DATA</string>
     <string name="cityWeather_curLoc">Current Location: </string>
     <string name="cityWeather_progressDialog">Loading Hourly Data</string>
+    <string name="fav_add">Add to Favorites</string>
+    <string name="fav_added">Added to Favorites</string>
+    <string name="loc_details">Current Location: </string>
+    <string name="progress_message">Loading Hourly Data</string>
 </resources>
