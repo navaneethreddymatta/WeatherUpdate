@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String city = cityName.getText().toString();
         String state = stateName.getText().toString();
         if(city == null || city.trim() == "") {
-            Toast.makeText(this, R.string.toast_noCityName, Toast.LENGTH_LONG);
+            Toast.makeText(this, R.string.toast_noCityName, Toast.LENGTH_LONG).show();
             return;
         }
         else if(state == null || state.trim() == "") {
-            Toast.makeText(this, R.string.toast_noStateName, Toast.LENGTH_LONG);
+            Toast.makeText(this, R.string.toast_noStateName, Toast.LENGTH_LONG).show();
             return;
         }
         else {
