@@ -16,4 +16,13 @@
     <string name="fav_added">Added to Favorites</string>
     <string name="loc_details">Current Location: </string>
     <string name="progress_message">Loading Hourly Data</string>
+    <string name="detail_title">City Weather</string>
+    <string name="detail_minTemperature">Min Temperature: </string>
+    <string name="detail_maxTemperature">Max Temperature: </string>
+    <string name="detail_feelsLike">Feels Like: </string>
+    <string name="detail_humidity">Humidity: </string>
+    <string name="detail_dewPoint">Dew Point: </string>
+    <string name="detail_pressure">Pressure: </string>
+    <string name="detail_clouds">Clouds: </string>
+    <string name="detail_winds">Winds: </string>
 </resources>
