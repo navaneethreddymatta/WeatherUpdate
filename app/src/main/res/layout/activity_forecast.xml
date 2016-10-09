@@ -44,19 +44,22 @@
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
         android:id="@+id/cloudImageView"
-        android:maxHeight="100dp"
-        android:maxWidth="100dp"
+        android:maxHeight="150dp"
+        android:maxWidth="150dp"
         android:layout_below="@+id/relativeLayout"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:minHeight="150dp"
+        android:minWidth="150dp" />
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:id="@+id/temperatureView"
         android:layout_below="@+id/cloudImageView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:text="TextView"
@@ -68,7 +71,8 @@
         android:layout_alignLeft="@+id/temperatureView"
         android:layout_alignStart="@+id/temperatureView"
         android:layout_alignRight="@+id/temperatureView"
-        android:layout_alignEnd="@+id/temperatureView" />
+        android:layout_alignEnd="@+id/temperatureView"
+        android:gravity="center_horizontal" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -98,7 +102,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp" />
+            android:layout_marginStart="75dp"
+            android:width="140dp" />
 
     </RelativeLayout>
 
@@ -132,7 +137,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp" />
+            android:layout_marginStart="75dp"
+            android:width="140dp" />
 
     </RelativeLayout>
 
@@ -157,7 +163,7 @@
             android:layout_toEndOf="@+id/textViewFeelsLike" />
 
         <TextView
-            android:text="@string/loc_details"
+            android:text="@string/detail_feelsLike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewFeelsLike"
@@ -166,7 +172,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp" />
+            android:layout_marginStart="75dp"
+            android:width="140dp" />
 
     </RelativeLayout>
 
@@ -191,7 +198,7 @@
             android:layout_toEndOf="@+id/textViewHumidity" />
 
         <TextView
-            android:text="@string/loc_details"
+            android:text="@string/detail_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewHumidity"
@@ -200,7 +207,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp" />
+            android:layout_marginStart="75dp"
+            android:width="140dp" />
 
     </RelativeLayout>
 
@@ -225,7 +233,7 @@
             android:layout_toEndOf="@+id/textViewDewPoint" />
 
         <TextView
-            android:text="@string/loc_details"
+            android:text="@string/detail_dewPoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewDewPoint"
@@ -234,7 +242,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp" />
+            android:layout_marginStart="75dp"
+            android:width="140dp" />
 
     </RelativeLayout>
 
@@ -259,7 +268,7 @@
             android:layout_toEndOf="@+id/textViewPressure" />
 
         <TextView
-            android:text="@string/loc_details"
+            android:text="@string/detail_pressure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewPressure"
@@ -268,7 +277,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp" />
+            android:layout_marginStart="75dp"
+            android:width="140dp" />
 
     </RelativeLayout>
 
@@ -293,7 +303,7 @@
             android:layout_toEndOf="@+id/textViewClouds" />
 
         <TextView
-            android:text="@string/loc_details"
+            android:text="@string/detail_clouds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewClouds"
@@ -302,7 +312,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp" />
+            android:layout_marginStart="75dp"
+            android:width="140dp" />
 
     </RelativeLayout>
 
@@ -327,7 +338,7 @@
             android:layout_toEndOf="@+id/textViewWinds" />
 
         <TextView
-            android:text="@string/loc_details"
+            android:text="@string/detail_winds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewWinds"
@@ -336,7 +347,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
-            android:layout_marginStart="75dp" />
+            android:layout_marginStart="75dp"
+            android:width="140dp" />
 
     </RelativeLayout>
 

@@ -25,4 +25,5 @@
     <string name="detail_pressure">Pressure: </string>
     <string name="detail_clouds">Clouds: </string>
     <string name="detail_winds">Winds: </string>
+    <string name="noConnection">No Internet Connection </string>
 </resources>

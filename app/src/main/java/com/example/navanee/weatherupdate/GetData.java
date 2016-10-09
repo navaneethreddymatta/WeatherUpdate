@@ -24,9 +24,12 @@ import java.util.Date;
 
 public class GetData extends AsyncTask<String,Void,ArrayList<Weather>> {
     DataRetreiver activity;
+    String city, state;
     ArrayList<Weather> weatherList = new ArrayList<Weather>();
-    public GetData(DataRetreiver activity) {
+    public GetData(DataRetreiver activity, String city, String state) {
         this.activity = activity;
+        this.city = city;
+        this.state = state;
     }
 
     @Override
@@ -73,7 +76,7 @@ public class GetData extends AsyncTask<String,Void,ArrayList<Weather>> {
                     humidity = Integer.parseInt(jsonObj.getString("humidity"));
                     feelsLike = Integer.parseInt((jsonObj.getJSONObject("feelslike")).getString("english"));
                     pressure = Integer.parseInt((jsonObj.getJSONObject("mslp")).getString("metric"));
-                    weatherObj = new Weather(timeStamp,temperature,dewPoint,clouds,icon_url,windSpeed,windDir,climateType,humidity,feelsLike,pressure);
+                    weatherObj = new Weather(timeStamp,temperature,dewPoint,climateType,icon_url,windSpeed,windDir,clouds,humidity,feelsLike,pressure,city,state);
                     weatherList.add(weatherObj);
                 }
             }

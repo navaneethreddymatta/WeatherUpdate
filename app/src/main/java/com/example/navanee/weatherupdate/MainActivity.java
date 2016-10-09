@@ -10,11 +10,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView cityName;
     TextView stateName;
     Button submitButton;
+    static ArrayList<FavouriteCity> favCities = new ArrayList<FavouriteCity>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(isNetworkConnected()){
             submitButton.setOnClickListener(this);
         } else {
+            Toast.makeText(this, R.string.noConnection, Toast.LENGTH_LONG).show();
             return;
         }
     }

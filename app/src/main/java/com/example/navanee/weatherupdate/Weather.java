@@ -19,8 +19,27 @@ public class Weather implements Serializable {
     private int humidity;
     private int feelsLike;
     private int pressure;
+    private String city;
 
-    public Weather(Date timeStamp, int temperature, int dewPoint, String clouds, String icon_url, int windSpeed, String windDir, String climateType, int humidity, int feelsLike, int pressure) {
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    private String state;
+
+    public Weather(Date timeStamp, int temperature, int dewPoint, String clouds, String icon_url, int windSpeed, String windDir, String climateType, int humidity, int feelsLike, int pressure, String city, String state) {
         this.timeStamp = timeStamp;
         this.temperature = temperature;
         this.dewPoint = dewPoint;
@@ -32,6 +51,8 @@ public class Weather implements Serializable {
         this.humidity = humidity;
         this.feelsLike = feelsLike;
         this.pressure = pressure;
+        this.city = city;
+        this.state = state;
     }
 
     public Date getTimeStamp() {

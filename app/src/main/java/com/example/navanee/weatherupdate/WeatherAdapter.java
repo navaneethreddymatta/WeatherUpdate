@@ -23,7 +23,7 @@ public class WeatherAdapter extends ArrayAdapter<Weather> {
     Context mContext;
     List<Weather> weatherList;
     int mResource;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm a");
 
     public WeatherAdapter(Context context, int resource, List<Weather> objects) {
         super(context, resource, objects);
@@ -51,7 +51,7 @@ public class WeatherAdapter extends ArrayAdapter<Weather> {
         Weather curWeather = weatherList.get(position);
         Date dt = curWeather.getTimeStamp();
         holder.timeView.setText(dateFormat.format(dt));
-        holder.cloudView.setText(curWeather.getClouds());
+        holder.cloudView.setText(curWeather.getClimateType());
         holder.temperatureView.setText(String.valueOf(curWeather.getTemperature()));
         Picasso.with(mContext).load(curWeather.getIcon_url()).into(holder.imgView);
         return convertView;
