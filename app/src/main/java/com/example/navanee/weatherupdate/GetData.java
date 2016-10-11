@@ -41,6 +41,7 @@ public class GetData extends AsyncTask<String,Void,ArrayList<Weather>> {
         String icon_url;
         int windSpeed;
         String windDir;
+        String degrees;
         String climateType;
         int humidity;
         int feelsLike;
@@ -72,11 +73,12 @@ public class GetData extends AsyncTask<String,Void,ArrayList<Weather>> {
                     icon_url = jsonObj.getString("icon_url");
                     windSpeed = Integer.parseInt((jsonObj.getJSONObject("wspd")).getString("english"));
                     windDir = (jsonObj.getJSONObject("wdir")).getString("dir");
+                    degrees = (jsonObj.getJSONObject("wdir")).getString("degrees");
                     climateType = jsonObj.getString("wx");;
                     humidity = Integer.parseInt(jsonObj.getString("humidity"));
                     feelsLike = Integer.parseInt((jsonObj.getJSONObject("feelslike")).getString("english"));
                     pressure = Integer.parseInt((jsonObj.getJSONObject("mslp")).getString("metric"));
-                    weatherObj = new Weather(timeStamp,temperature,dewPoint,climateType,icon_url,windSpeed,windDir,clouds,humidity,feelsLike,pressure,city,state);
+                    weatherObj = new Weather(timeStamp,temperature,dewPoint,climateType,icon_url,windSpeed,windDir,clouds,humidity,feelsLike,pressure,city,state,degrees);
                     weatherList.add(weatherObj);
                 }
             }

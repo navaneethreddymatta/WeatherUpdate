@@ -52,7 +52,7 @@ public class WeatherAdapter extends ArrayAdapter<Weather> {
         Date dt = curWeather.getTimeStamp();
         holder.timeView.setText(dateFormat.format(dt));
         holder.cloudView.setText(curWeather.getClimateType());
-        holder.temperatureView.setText(String.valueOf(curWeather.getTemperature()));
+        holder.temperatureView.setText(String.valueOf(curWeather.getTemperature()) + (char) 0x00B0 + "F");
         Picasso.with(mContext).load(curWeather.getIcon_url()).into(holder.imgView);
         return convertView;
     }

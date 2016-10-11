@@ -9,11 +9,13 @@
     <string name="toast_noCityName">Enter valid City name</string>
     <string name="toast_noStateName">Enter valid State name</string>
     <string name="toast_noRecordFound">No cities match your query</string>
+    <string name="toast_recordDeleted">City Deleted</string>
     <string name="cityWeather_title">HOURLY DATA</string>
     <string name="cityWeather_curLoc">Current Location: </string>
     <string name="cityWeather_progressDialog">Loading Hourly Data</string>
     <string name="fav_add">Add to Favorites</string>
     <string name="fav_added">Added to Favorites</string>
+    <string name="fav_updated">Updated Favorites Record</string>
     <string name="loc_details">Current Location: </string>
     <string name="progress_message">Loading Hourly Data</string>
     <string name="detail_title">City Weather</string>
@@ -26,4 +28,5 @@
     <string name="detail_clouds">Clouds: </string>
     <string name="detail_winds">Winds: </string>
     <string name="noConnection">No Internet Connection </string>
+    <string name="fav_updatedLabel">Updated On: </string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.navanee.weatherupdate;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -14,19 +15,25 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class CityDetail extends AppCompatActivity implements GetData.DataRetreiver {
 
-    String city;
-    String state;
+    String city,state,favCitiesStr;
     TextView locationDet;
     ListView weatherListView;
     LinearLayout weatherListLayout;
     RelativeLayout weatherLoadingLayout;
     ArrayList<Weather> weatherArrList = new ArrayList<Weather>();
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+    Gson gson = new Gson();
+    List<FavouriteCity> favList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,10 @@ public class CityDetail extends AppCompatActivity implements GetData.DataRetreiv
         dataUrl = dataUrl.replace("state_name",state);
         dataUrl = dataUrl.replace("city_name",city);
         new GetData(this,city,state).execute(dataUrl);
+        pref = getSharedPreferences(MainActivity.PREF_NAME,MODE_PRIVATE);
+        editor = pref.edit();
+        favCitiesStr = pref.getString(MainActivity.PREF_KEY_NAME,null);
+        favList = gson.fromJson(favCitiesStr, MainActivity.type);
     }
 
     public void setAllViews() {
@@ -93,12 +104,18 @@ public class CityDetail extends AppCompatActivity implements GetData.DataRetreiv
             if(weatherArrList.size() > 0) {
                 int index = isFavCityAlreadyExists(city, state);
                 if(index == -1) {
-                    MainActivity.favCities.add(new FavouriteCity(weatherArrList.get(0).getTimeStamp(), city, state, weatherArrList.get(0).getTemperature()));
+                    favList.add(new FavouriteCity(weatherArrList.get(0).getTimeStamp(), city, state, weatherArrList.get(0).getTemperature()));
+                    Toast.makeText(this, R.string.fav_added, Toast.LENGTH_LONG).show();
                 } else {
-                    FavouriteCity fav = MainActivity.favCities.get(index);
+                    FavouriteCity fav = favList.get(index);
                     fav.setTemperature(weatherArrList.get(0).getTemperature());
                     fav.setDate(weatherArrList.get(0).getTimeStamp());
+                    Toast.makeText(this, R.string.fav_updated, Toast.LENGTH_LONG).show();
                 }
+                favCitiesStr = gson.toJson(favList,MainActivity.type);
+                editor.clear();
+                editor.putString(MainActivity.PREF_KEY_NAME,favCitiesStr);
+                editor.commit();
             }
         }
         return true;
@@ -106,8 +123,10 @@ public class CityDetail extends AppCompatActivity implements GetData.DataRetreiv
 
     public int isFavCityAlreadyExists(String city, String state) {
         int index = -1;
-        for(int i = 0; i < MainActivity.favCities.size(); i++) {
-            if(MainActivity.favCities.get(i).getCity() == city && MainActivity.favCities.get(i).getCity() == city) {
+        favCitiesStr = pref.getString(MainActivity.PREF_KEY_NAME,null);
+        favList = gson.fromJson(favCitiesStr, MainActivity.type);
+        for(int i = 0; i < favList.size(); i++) {
+            if(favList.get(i).getCity().toString().equals(city) && favList.get(i).getState().equals(state)) {
                 index = i;
                 break;
             }
