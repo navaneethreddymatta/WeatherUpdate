@@ -48,7 +48,7 @@ public class Forecast extends AppCompatActivity {
         editor = pref.edit();
         favCitiesStr = pref.getString(MainActivity.PREF_KEY_NAME,null);
         favList = gson.fromJson(favCitiesStr, MainActivity.type);
-        //getActionBar().setTitle(R.string.action_name);
+        getSupportActionBar().setTitle("City Weather");
     }
 
     public void setAllViews() {

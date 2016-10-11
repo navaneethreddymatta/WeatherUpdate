@@ -46,7 +46,7 @@ public class CityDetail extends AppCompatActivity implements GetData.DataRetreiv
         dataUrl = dataUrl.replace("state_name",state);
         dataUrl = dataUrl.replace("city_name",city);
         new GetData(this,city,state).execute(dataUrl);
-        //getActionBar().setTitle("City Weather");
+        getSupportActionBar().setTitle("City Weather");
     }
 
     public void setAllViews() {

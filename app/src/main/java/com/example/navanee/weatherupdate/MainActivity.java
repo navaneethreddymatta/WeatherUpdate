@@ -2,6 +2,7 @@ package com.example.navanee.weatherupdate;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -69,13 +70,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         String city = cityName.getText().toString();
         String state = stateName.getText().toString();
-        if(city == null || city.trim().equals("")) {
+        if(city.trim().equals("")) {
             Toast.makeText(this, R.string.toast_noCityName, Toast.LENGTH_LONG).show();
-            return;
         }
-        else if(state == null || state.trim().equals("")) {
+        else if(state.trim().equals("")) {
             Toast.makeText(this, R.string.toast_noStateName, Toast.LENGTH_LONG).show();
-            return;
         }
         else {
             Intent intent = new Intent(this, CityDetail.class);
@@ -113,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             favListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    view.setBackgroundColor(Color.CYAN);
                     favList = gson.fromJson(favCitiesStr, MainActivity.type);
                     favList.remove(position);
                     Toast.makeText(MainActivity.this,R.string.toast_recordDeleted,Toast.LENGTH_LONG).show();
