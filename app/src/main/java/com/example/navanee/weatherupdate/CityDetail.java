@@ -46,10 +46,7 @@ public class CityDetail extends AppCompatActivity implements GetData.DataRetreiv
         dataUrl = dataUrl.replace("state_name",state);
         dataUrl = dataUrl.replace("city_name",city);
         new GetData(this,city,state).execute(dataUrl);
-        pref = getSharedPreferences(MainActivity.PREF_NAME,MODE_PRIVATE);
-        editor = pref.edit();
-        favCitiesStr = pref.getString(MainActivity.PREF_KEY_NAME,null);
-        favList = gson.fromJson(favCitiesStr, MainActivity.type);
+        //getActionBar().setTitle("City Weather");
     }
 
     public void setAllViews() {
@@ -62,35 +59,40 @@ public class CityDetail extends AppCompatActivity implements GetData.DataRetreiv
     @Override
     public void setData(final ArrayList<Weather> weatherList) {
         weatherArrList = weatherList;
-        if(weatherList.size() == 0) {
-            Toast.makeText(this,R.string.toast_noRecordFound,Toast.LENGTH_LONG).show();
-            Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(CityDetail.this,MainActivity.class);
-                    startActivity(intent);
-                }
-            },5 * 1000);
-        } else {
-            WeatherAdapter adapter = new WeatherAdapter(this,R.layout.hourly_forecast_row_layout,weatherList);
-            findViewById(R.id.weatherLoadingLayout).setVisibility(View.GONE);
-            findViewById(R.id.weatherListLayout).setVisibility(View.VISIBLE);
-            locationDet.setText(city + ", " + state);
-            weatherListView.setAdapter(adapter);
-            weatherListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(CityDetail.this,Forecast.class);
-                    Weather selectedForecast = weatherList.get(position);
-                    intent.putExtra("forecast",selectedForecast);
-                    intent.putExtra("city",city);
-                    intent.putExtra("state",state);
-                    intent.putExtra("wList",weatherList);
-                    startActivity(intent);
-                }
-            });
-        }
+        pref = getSharedPreferences(MainActivity.PREF_NAME,MODE_PRIVATE);
+        editor = pref.edit();
+        favCitiesStr = pref.getString(MainActivity.PREF_KEY_NAME,null);
+        favList = gson.fromJson(favCitiesStr, MainActivity.type);
+        WeatherAdapter adapter = new WeatherAdapter(this,R.layout.hourly_forecast_row_layout,weatherList);
+        findViewById(R.id.weatherLoadingLayout).setVisibility(View.GONE);
+        findViewById(R.id.weatherListLayout).setVisibility(View.VISIBLE);
+        locationDet.setText(city + ", " + state);
+        weatherListView.setAdapter(adapter);
+        weatherListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(CityDetail.this,Forecast.class);
+                Weather selectedForecast = weatherList.get(position);
+                intent.putExtra("forecast",selectedForecast);
+                intent.putExtra("city",city);
+                intent.putExtra("state",state);
+                intent.putExtra("wList",weatherList);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public void setError(String description) {
+        Toast.makeText(this,description,Toast.LENGTH_LONG).show();
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(CityDetail.this,MainActivity.class);
+                startActivity(intent);
+            }
+        },5 * 1000);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

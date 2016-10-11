@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Weather App</string>
+    <string name="action_name">City Weather</string>
     <string name="data_url">http://api.wunderground.com/api/9ae0e4077f38595e/hourly/q/state_name/city_name.json</string>
-    <string name="hint_city">City (i.e. Charlotte)</string>
-    <string name="hint_state">State (i.e. NC)</string>
+    <string name="hint_city">City</string>
+    <string name="hint_state">State</string>
     <string name="submit_button">Submit</string>
     <string name="fav_title">Favourites</string>
     <string name="hint_noFavList">There is no city in your Favorites</string>

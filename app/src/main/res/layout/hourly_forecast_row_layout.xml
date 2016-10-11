@@ -12,7 +12,11 @@
         android:maxHeight="60dp"
         android:maxWidth="60dp"
         android:minHeight="60dp"
-        android:minWidth="60dp" />
+        android:minWidth="60dp"
+        android:paddingTop="7dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="7dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -23,13 +27,20 @@
             android:text="TextView"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:id="@+id/timeText" />
+            android:id="@+id/timeText"
+            android:height="30dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:gravity="center_vertical" />
 
         <TextView
             android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cloudText" />
+            android:layout_height="match_parent"
+            android:id="@+id/cloudText"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <TextView
@@ -37,5 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="57dp"
         android:layout_weight="0.75"
-        android:id="@+id/temperatureText" />
+        android:id="@+id/temperatureText"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="25sp" />
 </LinearLayout>

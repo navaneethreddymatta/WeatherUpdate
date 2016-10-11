@@ -5,10 +5,7 @@
     android:id="@+id/activity_forecast"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="8dp"
     tools:context="com.example.navanee.weatherupdate.Forecast">
 
     <RelativeLayout
@@ -25,7 +22,9 @@
             android:id="@+id/textView5"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            tools:text="@string/loc_details" />
+            tools:text="@string/loc_details"
+            android:textSize="16sp"
+            android:paddingLeft="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,9 +34,24 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textView5"
-            android:layout_toEndOf="@+id/textView5" />
+            android:layout_toEndOf="@+id/textView5"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingLeft="5dp" />
 
     </RelativeLayout>
+
+    <TableRow
+        android:id="@+id/line1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0e0f0f"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/relativeLayout">
+    </TableRow>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -46,7 +60,7 @@
         android:id="@+id/cloudImageView"
         android:maxHeight="150dp"
         android:maxWidth="150dp"
-        android:layout_below="@+id/relativeLayout"
+        android:layout_below="@+id/line1"
         android:layout_centerHorizontal="true"
         android:minHeight="150dp"
         android:minWidth="150dp" />
@@ -55,24 +69,13 @@
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="5dp"
         android:id="@+id/temperatureView"
         android:layout_below="@+id/cloudImageView"
         android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/cloudView"
-        android:layout_below="@+id/temperatureView"
-        android:layout_alignLeft="@+id/temperatureView"
-        android:layout_alignStart="@+id/temperatureView"
-        android:layout_alignRight="@+id/temperatureView"
-        android:layout_alignEnd="@+id/temperatureView"
-        android:gravity="center_horizontal" />
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="48sp"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -90,7 +93,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textViewMin"
-            android:layout_toEndOf="@+id/textViewMin" />
+            android:layout_toEndOf="@+id/textViewMin"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/detail_minTemperature"
@@ -103,7 +108,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
-            android:width="140dp" />
+            android:width="140dp"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
@@ -125,7 +131,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textViewMax"
-            android:layout_toEndOf="@+id/textViewMax" />
+            android:layout_toEndOf="@+id/textViewMax"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/detail_maxTemperature"
@@ -138,19 +146,32 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
-            android:width="140dp" />
+            android:width="140dp"
+            android:textSize="16sp" />
 
     </RelativeLayout>
+
+    <TableRow
+        android:id="@+id/line2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0e0f0f"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/relativeLayout2">
+    </TableRow>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="20dp"
         android:id="@+id/relativeLayout4"
-        android:layout_below="@+id/relativeLayout2"
+        android:layout_below="@+id/line2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -160,7 +181,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textViewFeelsLike"
-            android:layout_toEndOf="@+id/textViewFeelsLike" />
+            android:layout_toEndOf="@+id/textViewFeelsLike"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/detail_feelsLike"
@@ -173,7 +196,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
-            android:width="140dp" />
+            android:width="140dp"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
@@ -195,7 +219,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textViewHumidity"
-            android:layout_toEndOf="@+id/textViewHumidity" />
+            android:layout_toEndOf="@+id/textViewHumidity"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/detail_humidity"
@@ -208,7 +234,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
-            android:width="140dp" />
+            android:width="140dp"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
@@ -230,7 +257,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textViewDewPoint"
-            android:layout_toEndOf="@+id/textViewDewPoint" />
+            android:layout_toEndOf="@+id/textViewDewPoint"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/detail_dewPoint"
@@ -243,7 +272,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
-            android:width="140dp" />
+            android:width="140dp"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
@@ -265,7 +295,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textViewPressure"
-            android:layout_toEndOf="@+id/textViewPressure" />
+            android:layout_toEndOf="@+id/textViewPressure"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/detail_pressure"
@@ -278,7 +310,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
-            android:width="140dp" />
+            android:width="140dp"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
@@ -300,7 +333,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textViewClouds"
-            android:layout_toEndOf="@+id/textViewClouds" />
+            android:layout_toEndOf="@+id/textViewClouds"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/detail_clouds"
@@ -313,7 +348,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
-            android:width="140dp" />
+            android:width="140dp"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
@@ -335,7 +371,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/textViewWinds"
-            android:layout_toEndOf="@+id/textViewWinds" />
+            android:layout_toEndOf="@+id/textViewWinds"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:text="@string/detail_winds"
@@ -348,9 +386,21 @@
             android:layout_alignParentStart="true"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
-            android:width="140dp" />
+            android:width="140dp"
+            android:textSize="16sp" />
 
     </RelativeLayout>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cloudView"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="18sp"
+        android:layout_below="@+id/temperatureView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>
